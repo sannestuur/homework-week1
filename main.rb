@@ -16,11 +16,18 @@ def map_contacts(contacts)
   print contacts_phone
 end
 
-# This methods selects all phonenumbers containing the string "+1" (Assignment 2.1)
+# This methods selects all contacts with phonenumbers containing the string "+1" (Assignment 2.1)
 def select_by_phonenumber(contacts)
   phone_select = contacts.select {|contact| contact[:phone] =~ /\b#{"+1 "}/}
 
   print phone_select
+end
+
+# This methods selects all contacts with email addresses containing the string ".org" (Assignment 2.2)
+def select_by_email(contacts)
+  mail_select = contacts.select {|contact| contact[:email] =~ /\b#{".org"}/}
+
+  print mail_select
 end
 
 contacts = read_contacts
@@ -28,3 +35,5 @@ contacts = read_contacts
 #map_contacts(contacts)
 
 #select_by_phonenumber(contacts)
+
+# select_by_email(contacts)
