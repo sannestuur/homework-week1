@@ -30,7 +30,31 @@ def select_by_email(contacts)
   print mail_select
 end
 
+# This method gives the amount of contacts that have a phonenumber containing the string "+1" (Assignment 3.1)
+def amount_of_selected_phonenumbers(contacts)
+  phone_select = contacts.select {|contact| contact[:phone] =~ /\b#{"+1 "}/}
+
+  phone_select.reduce(0) do |sum, contact|
+    sum += 1
+  end
+end
+
+# This method gives the amount of contacts that have a phonenumber containing the string "+1" (Assignment 3.1)
+def amount_of_selected_phonenumbers(contacts)
+  phone_select = contacts.select {|contact| contact[:phone] =~ /\b#{"+1 "}/}
+
+  phone_select.reduce(0) do |sum, contact|
+    sum += 1
+  end
+end
+
+
+
+
 contacts = read_contacts
+
+print amount_of_selected_phonenumbers(contacts)
+puts
 
 #map_contacts(contacts)
 
