@@ -39,21 +39,21 @@ def amount_of_selected_phonenumbers(contacts)
   end
 end
 
-# This method gives the amount of contacts that have a phonenumber containing the string "+1" (Assignment 3.1)
-def amount_of_selected_phonenumbers(contacts)
-  phone_select = contacts.select {|contact| contact[:phone] =~ /\b#{"+1 "}/}
+# This method gives the amount of contacts with email addresses containing the string ".org" (Assignment 3.2)
+def amount_of_selected_email(contacts)
+  mail_select = contacts.select {|contact| contact[:email] =~ /\b#{".org"}/}
 
-  phone_select.reduce(0) do |sum, contact|
+  mail_select.reduce(0) do |sum, contact|
     sum += 1
   end
 end
 
-
-
-
 contacts = read_contacts
 
 print amount_of_selected_phonenumbers(contacts)
+puts
+
+print amount_of_selected_email(contacts)
 puts
 
 #map_contacts(contacts)
